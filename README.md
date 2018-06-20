@@ -18,4 +18,5 @@ To run this app on your computer, you need to create your own ApiKeys class, put
 NOTE: this is DEVELOPMENT VERSION, right now it works quite well, but I still need to:
 - repair some bugs, check if user's inputs are correct and handle errors and exceptions, that may occur;
 - add some new functionalities, like more information about weather and new kind of weather alerts;
-- make some nice GUI .
+- make some nice GUI;
+- and the most important thing - write tests.
