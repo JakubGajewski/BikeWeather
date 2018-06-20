@@ -14,3 +14,5 @@ Design-patterns used in application are:
 - MVC architecture.
 
 To run this app on your computer, you need to create your own ApiKeys class, put it to Services packages, and in fields weatherApiKey and pollutionApiKey insert your own keys. Enjoy!
+
+NOTE: this is development versions, right now it works well, but I want to add some new functionalities, like more information about weather and new kind of weather alerts. In the future I also plan to connect with Windy API to check for the wind conditions and make some nice GUI.
