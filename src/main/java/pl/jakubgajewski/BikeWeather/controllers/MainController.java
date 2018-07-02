@@ -4,28 +4,33 @@ import pl.jakubgajewski.BikeWeather.models.InformationModel;
 import pl.jakubgajewski.BikeWeather.models.Observer;
 import pl.jakubgajewski.BikeWeather.models.services.RestService;
 import pl.jakubgajewski.BikeWeather.models.utils.Alerts;
-import pl.jakubgajewski.BikeWeather.views.Menu;
+import pl.jakubgajewski.BikeWeather.models.utils.DataProcessingUtils;
+import pl.jakubgajewski.BikeWeather.views.UserInterface;
 
 public class MainController implements Observer {
     private RestService restService = RestService.getInstance();
-        private Menu menu;
+    private UserInterface userInterface;
 
     public MainController() {
         restService.registerObserver(this);
-        menu = new Menu();
+        userInterface = new UserInterface();
     }
 
     public void run() {
-        String response;
-        do {
-            response = menu.getCityFromUser();
+        userInterface.sayHello();
+        String response = userInterface.getFirstCityFromUser();
+
+        while (!response.equals("")) {
             restService.getInformation(response);
-            } while (!response.equals("exit"));
+            response = userInterface.getNextCityFromUser();
+        }
+        userInterface.sayGoodbye();
     }
 
     @Override
     public void update(InformationModel informationModel) {
-        menu.sendMessageToConsole(menu.informationText(informationModel));
-        menu.sendMessageToConsole(Alerts.checkCyclingConditions(informationModel));
+        userInterface.sendMessageToConsole(DataProcessingUtils.procesData(informationModel));
+        userInterface.sendMessageToConsole(Alerts.checkCyclingConditions(informationModel));
+        userInterface.sendMessageToConsole("\n");
     }
 }

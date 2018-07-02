@@ -1,15 +1,19 @@
 package pl.jakubgajewski.BikeWeather.models;
 
+import pl.jakubgajewski.BikeWeather.models.utils.ConverterUtils;
+
 public class InformationModel {
     private String cityName;
     private float longitude;
     private float latitude;
     private int temperature;
+    private int temperatureInCelsius;
     private int pressure;
     private int humidity;
     private int clouds;
     private String weatherComment;
     private float airQualityIndex;
+    //TODO: missing information about rain and wind
 
     public String getCityName() {
         return cityName;
@@ -43,6 +47,14 @@ public class InformationModel {
         this.temperature = temperature;
     }
 
+    public int getTemperatureInCelsius() {
+        return temperatureInCelsius;
+    }
+
+    public void setTemperatureInCelsius(int temperatureInCelsius) {
+        this.temperatureInCelsius = temperatureInCelsius;
+    }
+
     public int getPressure() {
         return pressure;
     }
@@ -67,6 +79,10 @@ public class InformationModel {
         this.clouds = clouds;
     }
 
+    public void setWeatherComment(String weatherComment) {
+        this.weatherComment = weatherComment;
+    }
+
     public String getWeatherComment() {
         return weatherComment;
     }
@@ -84,6 +100,7 @@ public class InformationModel {
         this.longitude = longitude;
         this.latitude = latitude;
         this.temperature = temperature;
+        this.temperatureInCelsius = ConverterUtils.convertKelvinsToCelsius(temperature);
         this.pressure = pressure;
         this.humidity = humidity;
         this.clouds = clouds;
@@ -98,6 +115,7 @@ public class InformationModel {
                 ", longitude=" + longitude +
                 ", latitude=" + latitude +
                 ", temperature=" + temperature +
+                ", temperatureInCelsius=" + temperatureInCelsius +
                 ", pressure=" + pressure +
                 ", humidity=" + humidity +
                 ", clouds=" + clouds +
@@ -106,7 +124,4 @@ public class InformationModel {
                 '}';
     }
 
-    public void setWeatherComment(String weatherComment) {
-        this.weatherComment = weatherComment;
-    }
 }

@@ -48,7 +48,7 @@ public class RestService {
             float airQualityIndex;
 
             JSONObject rootWeatherResponse = new JSONObject(weatherResponse);
-            
+
             JSONObject coordObject = rootWeatherResponse.getJSONObject("coord");
             longitude = coordObject.getFloat("lon");
             latitude = coordObject.getFloat("lat");
@@ -78,6 +78,12 @@ public class RestService {
                 //Airly has some bugs and very often response is not available
             }
             InformationModel informationModel = new InformationModel(city, latitude, longitude, temperature, humidity, pressure, clouds, description, airQualityIndex);
+
+            try {Thread.sleep(2000);
+                //Just a simulation of lot-of=data downloading process - to see if it works in different thread
+            } catch (InterruptedException IE) {
+                System.out.println("Iterrupted exception, the thread is interrupted!");
+            }
 
             notifyObservers(informationModel);
         });
