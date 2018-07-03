@@ -79,8 +79,8 @@ public class RestService {
             }
             InformationModel informationModel = new InformationModel(city, latitude, longitude, temperature, humidity, pressure, clouds, description, airQualityIndex);
 
+            //Just for simulation of a lot-of-data downloading process - to see if it works in different thread:
             try {Thread.sleep(2000);
-                //Just a simulation of lot-of=data downloading process - to see if it works in different thread
             } catch (InterruptedException IE) {
                 System.out.println("Iterrupted exception, the thread is interrupted!");
             }
@@ -96,6 +96,6 @@ public class RestService {
     }
 
     public List getObserverList() {     ////////method used only in tests
-        return this.observerList;                               ////////
+        return this.observerList;
     }
 }
