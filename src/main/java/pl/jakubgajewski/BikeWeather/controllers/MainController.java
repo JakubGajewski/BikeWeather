@@ -3,8 +3,7 @@ package pl.jakubgajewski.BikeWeather.controllers;
 import pl.jakubgajewski.BikeWeather.models.InformationModel;
 import pl.jakubgajewski.BikeWeather.models.Observer;
 import pl.jakubgajewski.BikeWeather.models.services.RestService;
-import pl.jakubgajewski.BikeWeather.models.utils.Alerts;
-import pl.jakubgajewski.BikeWeather.models.utils.DataProcessingUtils;
+import pl.jakubgajewski.BikeWeather.models.utils.CommunitactionUtils;
 import pl.jakubgajewski.BikeWeather.views.UserInterface;
 
 public class MainController implements Observer {
@@ -29,8 +28,8 @@ public class MainController implements Observer {
 
     @Override
     public void update(InformationModel informationModel) {
-        userInterface.sendMessageToConsole(DataProcessingUtils.procesData(informationModel));
-        userInterface.sendMessageToConsole(Alerts.checkCyclingConditions(informationModel));
+        userInterface.sendMessageToConsole(CommunitactionUtils.procesData(informationModel));
+        userInterface.sendMessageToConsole(CommunitactionUtils.checkCyclingConditions(informationModel));
         userInterface.sendMessageToConsole("\n");
     }
 }

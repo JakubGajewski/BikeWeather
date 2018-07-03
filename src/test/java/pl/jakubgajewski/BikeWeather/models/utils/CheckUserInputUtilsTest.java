@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CheckUserInputTest {
+class CheckUserInputUtilsTest {
 
     @BeforeAll
     static void zupa () {
@@ -15,10 +15,9 @@ class CheckUserInputTest {
 
     @Test
     void checkIfInputIsText() {
-
-        assertFalse(CheckUserInput.checkIfInputIsText("16"));
-        assertTrue(CheckUserInput.checkIfInputIsText("ddawdaa"));
-        assertFalse(CheckUserInput.checkIfInputIsText("ddawdaa!"));
+        assertFalse(CheckUserInputUtils.checkIfInputIsText("16"));
+        assertTrue(CheckUserInputUtils.checkIfInputIsText("ddawdaa"));
+        assertFalse(CheckUserInputUtils.checkIfInputIsText("ddawdaa!"));
     }
 
     @AfterAll
