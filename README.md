@@ -8,15 +8,15 @@ API used in the application are OpenWeatherMap and Airly.
 
 It's multithreaded application, user's input starts new thread, which asks for JSON file, so user don't have to wait for it.
 
-Design-patterns used in application are:
+Design-patterns used in the application are:
 - Observer - MainController observs RestService, and is notified if we get some new informations;
 - Singleton - there is only one instance of InformationModel;
 - MVC architecture.
 
-To run this app on your computer, you need to create your own ApiKeys class, put it to Services packages, and in fields weatherApiKey and pollutionApiKey insert your own keys. Enjoy!
+To run this app on your computer, you need to create your own ApiKeys class, put it to Services packages, create fields weatherApiKey and pollutionApiKey and insert there your own keys, which you can get at API's providers websites. Enjoy!
 
 NOTE: this is DEVELOPMENT VERSION, right now it works quite well, but I still need to:
 - repair some bugs, check if user's inputs are correct and handle errors and exceptions, that may occur;
-- add some new functionalities, like more information about weather and new kind of weather alerts;
+- add some new features, like more information about weather and new kind of weather alerts;
 - make some nice GUI;
 - and the most important thing - write tests.

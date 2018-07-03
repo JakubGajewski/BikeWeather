@@ -1,11 +1,19 @@
 package pl.jakubgajewski.BikeWeather.models.utils;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pl.jakubgajewski.BikeWeather.models.InformationModel;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class AlertsTest {
+
+    @BeforeAll
+    static void zupa() {
+        System.out.println("Zaraz będą testy alertów!");
+    }
+
 
     InformationModel informationModelTest = new InformationModel("Czyste miasto", 25, 25, 290, 1000, 44,56,"superowo", 40);
 
@@ -25,6 +33,11 @@ class AlertsTest {
         assertEquals(Alerts.checkPollutionLevel(65.0f),"Air Quality Index: 65.0\nThere is some pollution, it's hazard to cycle in this conditions");
         assertEquals(Alerts.checkPollutionLevel(80.0f),"Air Quality Index: 80.0\nAir outside is extremally polluted, stay inside, close all windows and turn on the cleaner!");
 
+    }
+
+    @AfterAll
+    static void zupka() {
+        System.out.println("To by było na tyle z alertów!");
     }
 }
 
