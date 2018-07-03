@@ -35,7 +35,7 @@ public final class CommunitactionUtils {
         } else if (airQualityIndex > 50) {
             return airQualityIndexCommunicate + airQualityIndex + moderatePollutionCommunicate;
         } else if (airQualityIndex == -1) {
-            return airQualityIndexCommunicate + airQualityIndex + noPollutionInformationCommunicate;
+            return noPollutionInformationCommunicate;
         }
         return airQualityIndexCommunicate + airQualityIndex + smallPollutionCommunicate;
     }

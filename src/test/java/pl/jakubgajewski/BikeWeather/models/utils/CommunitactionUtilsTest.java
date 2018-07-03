@@ -14,7 +14,6 @@ class CommunitactionUtilsTest {
         System.out.println("Zaraz będą testy alertów!");
     }
 
-
     InformationModel informationModelTest = new InformationModel("Czyste miasto", 25, 25, 290, 1000, 44,56,"superowo", 40);
 
     @Test
@@ -32,6 +31,7 @@ class CommunitactionUtilsTest {
     void checkPollutionLevel() {
         assertEquals(CommunitactionUtils.checkPollutionLevel(65.0f),CommunitactionUtils.airQualityIndexCommunicate + "65.0" + CommunitactionUtils.moderatePollutionCommunicate);
         assertEquals(CommunitactionUtils.checkPollutionLevel(80.0f),CommunitactionUtils.airQualityIndexCommunicate + "80.0" + CommunitactionUtils.heavyPollutionCommunicate);
+        assertEquals(CommunitactionUtils.checkPollutionLevel(-1.0f),CommunitactionUtils.noPollutionInformationCommunicate);
 
     }
 
