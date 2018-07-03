@@ -94,4 +94,8 @@ public class RestService {
             observer.update(informationModel);
         }
     }
+
+    public List getObserverList() {     ////////method used only in tests
+        return this.observerList;                               ////////
+    }
 }
