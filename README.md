@@ -15,8 +15,10 @@ Design-patterns used in the application are:
 
 To run this app on your computer, you need to create your own ApiKeys class, put it to the services package, create the fields named "weatherApiKey" and "pollutionApiKey" and insert there your own keys, which you can get for free at API's providers websites. Enjoy!
 
-NOTE: this is DEVELOPMENT VERSION, right now it works quite well, but I still need to:
+NOTE#1: this is DEVELOPMENT VERSION, right now it works quite well, but I still need to:
 - repair some bugs, check if user's inputs are correct and handle errors and exceptions, that may occur;
 - add some new features, like more information about weather and new kind of weather alerts;
 - make some nice GUI;
 - and the most important thing - write tests.
+
+NOTE#2: this application is based on WeatherForecast application, which was made at Akademia Kodu Java Bootcamp with my colleagues. However, it's only the root, and I've added / changed a lot of functionality.
